@@ -100,7 +100,19 @@ class Menu {
 
     fun mostrarInstrucciones() {
         println("Instrucciones:")
-        // Faltan Instrucciones
+        println("Aquí está el texto corregido:\n" +
+                "\n" +
+                "# Instrucciones del BINGO\n" +
+                "1. Se selecciona un número de jugadores.\n" +
+                "2. Dependiendo del número de jugadores, se repartirán una serie de cartones.\n" +
+                "3. Cada cartón tendrá dibujada una tabla de 27 celdas en 3 filas y 9 columnas.\n" +
+                "4. Cada cartón tendrá una serie y una cantidad de números aleatorios, así como espacios en blanco.\n" +
+                "5. El bombo girará hasta sacar un número aleatorio y posteriormente se mostrará dicho número.\n" +
+                "6. Una vez se haya mostrado el número, los jugadores tendrán 5 segundos para dar una respuesta pulsando una tecla.\n" +
+                "7. Si un jugador no ha dado su respuesta tras pasar los 5 segundos, la jugada no se contará, ya esté el número en el tablero o no.\n" +
+                "8. Si un jugador consigue una línea horizontal o vertical, se mostrará un mensaje de declaración de línea.\n" +
+                "9. En el momento en el que un jugador consiga realizar una línea horizontal y una vertical, se mostrará un mensaje de declaración de bingo y la partida terminará.\n" +
+                "10. Después de terminar la partida, se mostrará una opción para decidir si quieres volver a jugar o no.")
     }
 }
 
