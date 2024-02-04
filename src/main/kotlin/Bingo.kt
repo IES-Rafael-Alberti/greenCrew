@@ -25,8 +25,7 @@ class VerificarLinea {
 
 class Bombo(private val bombo: MutableList<Int> = (1..90).toMutableList()) {
     private val numerosGenerados: MutableList<Int> = mutableListOf()
-    private var lineaHorizontalCantada = false
-    private var lineaVerticalCantada = false
+    private var lineaCantada = false
     private var bingoCantado = false
 
     fun jugar() {
@@ -34,7 +33,7 @@ class Bombo(private val bombo: MutableList<Int> = (1..90).toMutableList()) {
         // variables para rastrear si ya se ha cantado línea
 
 
-        while (bombo.isNotEmpty() && !(lineaHorizontalCantada && lineaVerticalCantada)) {
+        while (bombo.isNotEmpty() && !bingoCantado) {
             val numero = generarNumeroAleatorio()
             numerosGenerados.add(numero)
             println("Número generado: $numero")
@@ -42,18 +41,13 @@ class Bombo(private val bombo: MutableList<Int> = (1..90).toMutableList()) {
             // Verifica si se ha cantado linea
             val (hayLinea, fila) = verificador.hayLinea(numerosGenerados)  // Ajusta según tus necesidades
 
-            if (hayLinea && !lineaHorizontalCantada) {
+            if (hayLinea && !lineaCantada) {
                 println("¡Línea en la fila $fila!")
-                lineaHorizontalCantada = true  // Actualiza el estado de líneaCantada
-            }
-
-            else if (hayLinea && !lineaVerticalCantada) {
-                println("¡Línea en la columna $fila!")
-                lineaVerticalCantada = true  // Actualiza el estado de líneaCantada
+                lineaCantada = true  // Actualiza el estado de líneaCantada
             }
 
             // Espera 2 segundos antes de generar el próximo número
-            Thread.sleep(2000)
+            Thread.sleep(200)
         }
 
         // Verifica si se ha cantado bingo
