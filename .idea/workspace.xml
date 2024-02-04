@@ -5,6 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44f23c1f-9859-417d-bcd5-ba542f761aa7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bingo.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +52,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "45-comprobar-linea",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/programacion web/asignaturas/entornos de desarrollo/tema 3/scrum2/greenCrew/settings.gradle.kts",
     "node.js.detected.package.eslint": "true",
@@ -78,7 +83,7 @@
       <workItem from="1707061769126" duration="468000" />
       <workItem from="1707062258297" duration="14000" />
       <workItem from="1707062287503" duration="39000" />
-      <workItem from="1707062445669" duration="89000" />
+      <workItem from="1707062445669" duration="455000" />
     </task>
     <servers />
   </component>
