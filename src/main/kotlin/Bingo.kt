@@ -47,7 +47,7 @@ class Bombo(private val bombo: MutableList<Int> = (1..90).toMutableList()) {
             }
 
             // Espera 2 segundos antes de generar el próximo número
-            Thread.sleep(200)
+            Thread.sleep(2000)
         }
 
         // Verifica si se ha cantado bingo
