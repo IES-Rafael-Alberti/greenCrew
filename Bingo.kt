@@ -1,86 +1,5 @@
 import kotlin.random.Random
 
-
-//Clase Bombo
-class Bombo(private val bombo: MutableList<Int> = (1..90).toMutableList()) {
-    private val numerosGenerados: MutableList<Int> = mutableListOf()
-    private var bingoCantado = false
-
-    fun bombo() {
-        while (bombo.isNotEmpty() && !bingoCantado) {
-            val numero = generarNumeroAleatorio()
-            numerosGenerados.add(numero)
-            println("Número generado: $numero")
-
-            // Verifica si se ha cantado bingo (condición ficticia)
-            if (verificarBingo(numerosGenerados)) {
-                bingoCantado = true
-                println("¡Bingo!")
-            }
-
-            // Espera 2 segundos antes de generar el próximo número
-            Thread.sleep(2000)
-        }
-
-        // Imprime la lista de números generados
-        println("Números generados: $numerosGenerados")
-    }
-    // Si se acaban los números del bombo arroja un mensaje
-    private fun generarNumeroAleatorio(): Int {
-        if (bombo.isEmpty()) {
-            throw IllegalStateException("Bombo vacío, todos los números han sido generados.")
-        }
-
-        val indiceAleatorio = Random.nextInt(bombo.size)
-        val numero = bombo.removeAt(indiceAleatorio)
-
-        return numero
-    }
-
-    private fun verificarBingo(numerosGenerados: List<Int>): Boolean {
-        // Lógica para verificar si se ha cantado bingo
-        return false
-    }
-}
-
-
-//Clase Carton
-class CartonBingoAleatorio {
-    private val filas = 3
-    private val columnas = 5
-    private val carton = Array(filas) { IntArray(columnas) }
-
-    init {
-        generarCartonBingoAleatorio()
-    }
-
-    private fun generarCartonBingoAleatorio() {
-        val numerosDisponibles = mutableListOf<Int>()
-
-        for (i in 1..90) {
-            numerosDisponibles.add(i)
-        }
-
-        for (i in 0 until filas) {
-            for (j in 0 until columnas) {
-                val numeroAleatorio = numerosDisponibles.random()
-                carton[i][j] = numeroAleatorio
-                numerosDisponibles.remove(numeroAleatorio)
-            }
-        }
-    }
-
-    fun mostrarCarton() {
-        println("Cartón de Bingo:")
-        for (i in 0 until filas) {
-            for (j in 0 until columnas) {
-                print("${carton[i][j]}\t")
-            }
-            println()
-        }
-    }
-}
-
 //Clase Menu
 class Menu {
     fun mostrarMenu() {
@@ -89,15 +8,14 @@ class Menu {
         println("3. Salir")
         println("Selecciona una opción:")
     }
-
-    fun jugar() {
+    // añadido en el segundo sprint carton: CartonBingoAleatorio, simulador.bombo(carton)
+    fun jugar(carton: CartonBingoAleatorio) {
         println("¡Bienvenido a la función Jugar!")
         val carton = CartonBingoAleatorio()
         carton.mostrarCarton()
         val simulador = Bombo()
-        simulador.bombo()
+        simulador.bombo(carton)
     }
-
     fun mostrarInstrucciones() {
         println("Instrucciones:")
         println("Aquí está el texto corregido:\n" +
@@ -116,10 +34,153 @@ class Menu {
     }
 }
 
+//Clase Bombo
+class Bombo(private val bombo: MutableList<Int> = (1..90).toMutableList()) {
+    private val numerosGenerados: MutableList<Int> = mutableListOf()
+    private var bingoCantado = false
+
+    //segundo sprint añadido carton: CartonBingoAleatorio
+    fun bombo(carton: CartonBingoAleatorio) {
+        val verificador = VerificarLinea()
+
+        while (bombo.isNotEmpty() && !bingoCantado) {
+            val numero = generarNumeroAleatorio()
+            numerosGenerados.add(numero)
+            println("Número generado: $numero")
+            // segundo sprint añadido verificarYMarcarEnCarton(numero, carton)
+            verificarYMarcarEnCarton(numero, carton)
+
+            // Espera 2 segundos antes de generar el próximo número
+            Thread.sleep(2000)
+
+            // Verifica si se ha cantado bingo
+            if (verificarBingo(numerosGenerados)) {
+                bingoCantado = true
+                println("¡Bingo!")
+            } else {
+                println("No hay bingo")
+            }
+        }
+
+        // Imprime la lista de números generados
+        println("Números generados: $numerosGenerados")
+    }
+    // Si se acaban los números del bombo arroja un mensaje
+    private fun generarNumeroAleatorio(): Int {
+        if (bombo.isEmpty()) {
+            throw IllegalStateException("Bombo vacío, todos los números han sido generados.")
+        }
+
+        val indiceAleatorio = Random.nextInt(bombo.size)
+        val numero = bombo.removeAt(indiceAleatorio)
+
+        return numero
+    }
+
+    // Verifica si se ha cantado bingo
+    private fun verificarBingo(numerosGenerados: List<Int>): Boolean {
+        val todosLosNumerosGenerados = numerosGenerados.toSet()
+        return todosLosNumerosGenerados.size == 90
+    }
+
+    //segundo sprint
+    private fun verificarYMarcarEnCarton(numero: Int, carton: CartonBingoAleatorio) {
+        if (carton.verificarNumeroEnCarton(numero)) {
+            println("¡Número $numero encontrado en el cartón! Marcado con 'X'.")
+            carton.mostrarCarton()
+        } else {
+            println("Número $numero no encontrado en el cartón.")
+        }
+    }
+}
+
+
+// Clase CartonBingoAleatorio
+class CartonBingoAleatorio {
+    private var filas = 3
+    private var columnas = 5
+    private var carton = Array(filas) { IntArray(columnas) }
+    private val numerosTachados = mutableSetOf<Int>()
+
+    init {
+        generarCartonBingoAleatorio()
+    }
+
+    private fun generarCartonBingoAleatorio() {
+        val numerosDisponibles = mutableListOf<Int>()
+
+        for (i in 1..90) {
+            numerosDisponibles.add(i)
+        }
+
+        for (i in 0 until filas) {
+            for (j in 0 until columnas) {
+                var numeroAleatorio = numerosDisponibles.random()
+                carton[i][j] = numeroAleatorio
+                numerosDisponibles.remove(numeroAleatorio)
+            }
+        }
+    }
+
+
+    fun mostrarCarton() {
+        println("Cartón de Bingo:")
+        for (i in 0 until filas) {
+            for (j in 0 until columnas) {
+                val numero = carton[i][j]
+                val contenidoCelda = if (numerosTachados.contains(numero)) "$numero X" else "$numero"
+                print("$contenidoCelda\t")
+            }
+            println()
+        }
+    }
+    // segundo sprint
+    fun marcarNumeroTachado(numero: Int) {
+        numerosTachados.add(numero)
+    }
+
+    //segundo sprint
+    fun verificarNumeroEnCarton(numero: Int): Boolean {
+        for (i in 0 until filas) {
+            for (j in 0 until columnas) {
+                if (carton[i][j] == numero) {
+                    marcarNumeroTachado(numero)
+                    return true
+                }
+            }
+        }
+        return false
+    }
+
+}
+
+class VerificarLinea {
+    private val filas = 3
+    private val columnas = 9
+
+    fun hayLinea(numerosGenerados: List<Int>): Pair<Boolean, Int> {
+        for (fila in 0 until filas) {
+            var contador = 0
+            for (columna in 0 until columnas) {
+                val numero = fila * columnas + columna + 1
+                if (numerosGenerados.contains(numero)) {
+                    contador++
+                }
+            }
+            if (contador == columnas) {
+                return Pair(true, fila + 1)  // Se suma 1 para que la fila sea 1-indexed
+            }
+        }
+
+        return Pair(false, -1)
+    }
+}
 
 
 fun main() {
     val menu = Menu()
+    // añadido en el segundo sprint val carton = CartonBingoAleatorio()
+    val carton = CartonBingoAleatorio()
 
     var opcion: Int
 
@@ -129,7 +190,8 @@ fun main() {
         opcion = readLine()?.toIntOrNull() ?: 0
 
         when (opcion) {
-            1 -> menu.jugar()
+            // añadido en el segundo sprint 1 -> menu.jugar(carton)
+            1 -> menu.jugar(carton)
             2 -> menu.mostrarInstrucciones()
             3 -> println("Gracias por jugar!!")
             else -> println("Opción no válida. Inténtalo de nuevo.")
