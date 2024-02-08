@@ -1,0 +1,33 @@
+class CartonBingo(private val carton: Array<IntArray>) {
+
+    // Función para comprobar si se ha hecho línea en el cartón si hay una línea en el cartón
+    private fun comprobarLinea(): Boolean {
+        for (i in carton.indices) {
+            if (carton[i].all { it == -1 }) {
+                return true
+            }
+        }
+        return false
+    }
+
+    // Función para comprobar si se ha hecho bingo
+    private fun comprobarBingo(): Boolean {
+        for (fila in carton) {
+            if (!fila.all { it == -1 }) {
+                return false
+            }
+        }
+        return true
+    }
+
+    // Función para cantar línea o bingo 
+    fun cantar() {
+        if (comprobarLinea()) {
+            println("¡Línea en el cartón!")
+        } else if (comprobarBingo()) {
+            println("¡Bingo en el cartón!")
+        } else {
+            println("No hay línea ni bingo en el cartón.")
+        }
+    }
+}
