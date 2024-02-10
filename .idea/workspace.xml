@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c814ac09-602c-4bb3-8a6a-1cfb2e04d269" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/comprobar-linea-bingo-y-cantar-linea-o-bingo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bingo.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/.idea/comprobar-cantar-prima.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-cantar-prima/comprobarPrima.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprobar-linea-bingo-y-cantar-linea-o-bingo" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2cBAPEryckUftg40UyABSiW2CO8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Gradle.Build greenCrew.executor": "Run",
+    "Kotlin.BingoKt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "58-añadir-segundo-jugador",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/programacion web/asignaturas/entornos de desarrollo/tema 3/actividad 1/scrum3/greenCrew",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="BingoKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.BingoKt" />
+      <module name="greenCrew.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.BingoKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c814ac09-602c-4bb3-8a6a-1cfb2e04d269" name="Changes" comment="" />
+      <created>1707574571657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707574571657</updated>
+      <workItem from="1707574574416" duration="850000" />
+      <workItem from="1707575550945" duration="377000" />
+      <workItem from="1707575943675" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
